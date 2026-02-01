@@ -1,0 +1,60 @@
+   PC|RegWEn|ImmSel|BrUn|ASel|BSel|ALUSel|MemRW|WBSel|
+
+Opcode|Funct3|Funct7| R-Types: PC|RegWEn|ImmSel|BrUn|ASel|BSel|ALUSel|MemRW|WBSel|
+
+
+011 0011 | 000 | 000 0000 | add:  0 1 XXX X 0 0 0000 0 01
+011 0011 | 000 | 010 0000 | sub:  0 1 XXX X 0 0 1100 0 01
+011 0011 | 111 | 000 0000 | and:  0 1 XXX X 0 0 0111 0 01
+011 0011 | 110 | 000 0000 | or:   0 1 XXX X 0 0 0110 0 01 *
+011 0011 | 100 | 000 0000 | xor:  0 1 XXX X 0 0 0100 0 01
+011 0011 | 001 | 000 0000 | sll:  0 1 XXX X 0 0 0001 0 01
+011 0011 | 110 | 000 0000 | srl:  0 1 XXX X 0 0 0110 0 01
+011 0011 | 110 | 010 0000 | sra:  0 1 XXX X 0 0 1101 0 01
+011 0011 | 010 | 000 0000 | slt:  0 1 XXX X 0 0 0010 0 01
+011 0011 | 000 | 000 0001 | mul:  0 1 XXX X 0 0 1000 0 01
+011 0011 | 001 | 000 0001 | mulh: 0 1 XXX X 0 0 1001 0 01
+011 0011 | 011 | 000 0001 | mulhu:0 1 XXX X 0 0 1011 0 01
+
+Opcode|Funct3|Funct7| I-Types: PC|RegWEn|ImmSel|BrUn|ASel|BSel|ALUSel|MemRW|WBSel|
+
+
+001 0011 | 000 |          | addi: 0 1 000 X 0 1 0000 0 01
+001 0011 | 111 |          | andi: 0 1 000 X 0 1 0111 0 01
+001 0011 | 110 |          | ori:  0 1 000 X 0 1 0110 0 01
+001 0011 | 100 |          | xori: 0 1 000 X 0 1 0100 0 01
+001 0011 | 001 | 000 0000 | slli: 0 1 000 X 0 1 0001 0 01
+001 0011 | 101 | 000 0000 | srli: 0 1 000 X 0 1 0101 0 01
+001 0011 | 101 | 010 0000 | srai: 0 1 000 X 0 1 1101 0 01
+001 0011 | 010 |          | slti: 0 1 000 X 0 1 0010 0 01
+
+
+000 0011 | 000 |          | lb:   0 1 000 X 0 1 0000 0 00
+000 0011 | 001 |          | lh:   0 1 000 X 0 1 0000 0 00
+000 0011 | 010 |          | lw:   0 1 000 X 0 1 0000 0 00 *
+
+110 0111 | 000 |          | jalr: 1 1 000 X 0 1 0000 0 10
+
+Opcode|Funct3|Funct7| S-Types: PC|RegWEn|ImmSel|BrUn|ASel|BSel|ALUSel|MemRW|WBSel|
+
+010 0011 | 000 |          | sb:   0 0 001 X 0 1 0000 1 XX
+010 0011 | 001 |          | sh:   0 0 001 X 0 1 0000 1 XX
+010 0011 | 010 |          | sw:   0 0 001 X 0 1 0000 1 XX
+
+Opcode|Funct3|Funct7| B-Types: PC|RegWEn|ImmSel|BrUn|ASel|BSel|ALUSel|MemRW|WBSel|
+
+110 0011 | 000 |          | beq:  1 0 010 0 1 1 0000 0 XX
+110 0011 | 101 |          | bge:  1 0 010 0 1 1 0000 0 XX
+110 0011 | 111 |          | bgeu: 1 0 010 1 1 1 0000 0 XX
+110 0011 | 100 |          | blt:  1 0 010 0 1 1 0000 0 XX
+110 0011 | 110 |          | bltu: 1 0 010 1 1 1 0000 0 XX
+110 0011 | 001 |          | bne:  1 0 010 0 1 1 0000 0 XX
+
+Opcode|Funct3|Funct7| J-Types: PC|RegWEn|ImmSel|BrUn|ASel|BSel|ALUSel|MemRW|WBSel|
+
+110 1111 |     |          | jal:  1 1 100 X 1 1 0000 0 10
+
+Opcode|Funct3|Funct7| U-Types: PC|RegWEn|ImmSel|BrUn|ASel|BSel|ALUSel|MemRW|WBSel|
+
+001 0111 |     |          | auipc:0 1 011 X 1 1 0000 0 01
+011 0111 |     |          | lui:  0 1 011 X X 1 1111 0 01
